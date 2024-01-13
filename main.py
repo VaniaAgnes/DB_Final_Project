@@ -101,7 +101,7 @@ def main():
         while True:
             main_menu()
 
-            choice = input("Enter your choice (0-7): ")
+            choice = input("Enter your choice (0-8): ")
 
             if choice == "1":
                 while True:
