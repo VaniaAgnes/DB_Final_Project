@@ -7,7 +7,7 @@ from product import create_product, delete_product, update_product, view_product
 from transaction import create_transaction, delete_transaction, update_salestransaction, view_transaction_table
 from purchased import update_itempurchased, view_item_purchased_table
 from inventory import create_inventory, delete_inventory, update_inventory, view_inventory_table
-
+from Query import *
     
 def main_menu():
     print("\nMain Menu:")
@@ -18,6 +18,7 @@ def main_menu():
     print("5. Transaction Function")
     print("6. Purchased Function")
     print("7. Inventory Function")
+    print("8. List of Queries")
     print("0. Exit")
     
 def employee_menu():
@@ -73,7 +74,20 @@ def inventory_menu():
     print("3. Update Inventory")
     print("4. See Inventory List")
     print("5. Back to Main Menu")
-    
+
+def query_menu():
+    print("List of Queries Menu:")
+    print("1. Check the Total Purchased Quantity for Each Brand")
+    print("2. Find Products with Low Quantities")
+    print("3. Retrieve the Latest Restock Dates for Each Product")
+    print("4. Retrieve a List of Sales Transactions for a Specific Day")
+    print("5. Find Products That Have No Sales")
+    print("6. Get the Total Revenue for Each Category")
+    print("7. Average Transaction Amount (in Rupiah)")
+    print("8. Total Sales Transactions by Date (does not include unsuccessful transaction)")
+    print("9. Check the Account Mutations Within a Specified Period")
+    print("10. Retrieve the Brand with The Most Sales")
+    print("11. Back to Main Menu")
 
 def main():
     # Get employee ID from the user
@@ -110,7 +124,6 @@ def main():
                     elif employee_choice == "5":
                         print("Returning to the main menu...")
                         break
-                        
 
                     else:
                         print("Invalid choice. Please try again.")
@@ -246,7 +259,7 @@ def main():
                             create_inventory()
                             
                         elif inventory_choice == "2":
-                            delete_inventory
+                            delete_inventory()
 
                         elif inventory_choice == "3":
                             update_inventory()
@@ -261,12 +274,56 @@ def main():
                         else:
                             print("Invalid choice. Please try again.")
             
-            
-            
+            elif choice == '8':
+                    while True:
+                        print()
+                        query_menu()
+                        query_choice = input("Enter your choice: ")
+
+                        if query_choice == "1":
+                            total_purchased_brand()
+
+                        elif query_choice == "2":
+                            product_low_quantity()
+
+                        elif query_choice == "3":
+                            retrieve_latest_restock()
+
+                        elif query_choice == "4":
+                            date_str = input("Enter the date (YYYY-MM-DD): ")
+                            retrieve_transaction_on_specificDay(date_str)
+
+                        elif query_choice == "5":
+                            no_sale_products()
+
+                        elif query_choice == "6":
+                            get_total_revenue_cat()
+
+                        elif query_choice == "7":
+                            average_transaction_amount()
+
+                        elif query_choice == "8":
+                            total_transactions_by_date()
+
+                        elif query_choice == "9":
+                            start_date_str = input("Enter the beginning date (YYYY-MM-DD): ")
+                            end_date_str = input("Enter the end date (YYYY-MM-DD): ")
+                            check_mutations(start_date_str, end_date_str)
+
+                        elif query_choice == "10":
+                            brand_most_sales()
+
+                        elif query_choice == "11":
+                            print("Returning to the main menu...")
+                            break
+
+                        else:
+                            print("That is not part of our queries. Please try again.")
+
             elif choice == "0":
                 print("Exiting the program. Goodbye!")
                 break
-
+            
             else:
                 print("Invalid choice. Please enter a number between 0 and 7.")
 
