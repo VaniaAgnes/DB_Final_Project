@@ -1,4 +1,4 @@
-Welcome To Our Database Final Project ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆
+Welcome to our Database Final Project ⋆｡ﾟ☁︎｡⋆｡ ﾟ☾ ﾟ｡⋆
 
 This repository consists of our Grocery Management System made in Python using MySQL as its database.
 
