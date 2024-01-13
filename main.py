@@ -325,7 +325,7 @@ def main():
                 break
             
             else:
-                print("Invalid choice. Please enter a number between 0 and 7.")
+                print("Invalid choice. Please enter a number between 0 and 8.")
 
 
 if __name__ == "__main__":
