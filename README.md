@@ -13,6 +13,7 @@ This repository consists of our Grocery Management System made in Python using M
 - brand.py : contains queries and functions for the brand table
 - category.py : contains queries and functions for the category table
 - dbconnection.py : connects the files to the database
+- dbgrocery.sql : contains our database structure
 - employee.py : contains queries and functions for the employee table
 - product.py : contains queries and functions for the product table
 - inventory.py : contains queries and functions for the inventory table
